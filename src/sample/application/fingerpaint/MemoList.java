@@ -1,5 +1,6 @@
-package sample.application.memopad;
+package sample.application.fingerpaint;
 
+import sample.application.memopad.R;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ public class MemoList extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		this.memos = new MemoDBHelper(this);
 		SQLiteDatabase db = memos.getWritableDatabase();
-		Cursor cursor = db.query("memoDB", MemoList.cols, "_ID="+String.valueOf(id), null, null, null, null);		//‚‰‚„‚É‚Â‚¢‚Ä‚à‚Æ‚à‚ÆlongŒ^‚Å‚«‚Ä‚¢‚½‚Ì‚ÅStringŒ^‚É•ÏŠ·B
+		Cursor cursor = db.query("memoDB", MemoList.cols, "_ID="+String.valueOf(id), null, null, null, null);		//ï¿½ï¿½ï¿½ï¿½ï¿½É‚Â‚ï¿½ï¿½Ä‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½longï¿½^ï¿½Å‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Stringï¿½^ï¿½É•ÏŠï¿½ï¿½B
 		this.startManagingCursor(cursor);
 		Integer idx = cursor.getColumnIndex("memo");
 		cursor.moveToFirst();
@@ -33,10 +34,10 @@ public class MemoList extends ListActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		super.onCreate(savedInstanceState);
-		this.setContentView(R.layout.memolist);			//this.‚ğ’Ç‰ÁB
-		this.showMemos(this.getMemos());				//this.‚ğ’Ç‰ÁB
+		this.setContentView(R.layout.memolist);			//this.ï¿½ï¿½Ç‰ï¿½ï¿½B
+		this.showMemos(this.getMemos());				//this.ï¿½ï¿½Ç‰ï¿½ï¿½B
 		
 		ListView lv = (ListView) this.findViewById(android.R.id.list);
 		this.registerForContextMenu(lv);
@@ -51,7 +52,7 @@ public class MemoList extends ListActivity {
 					this, android.R.layout.simple_list_item_1, cursor, from, to);
 			setListAdapter(adapter);
 		}
-		this.memos.close();								//if‚É‘Î‚·‚é‹U‚ÌÛ‚ÌÀs•¶
+		this.memos.close();								//ifï¿½É‘Î‚ï¿½ï¿½ï¿½Uï¿½ÌÛ‚Ìï¿½ï¿½sï¿½ï¿½
 	}
 
 	public Cursor getMemos() {

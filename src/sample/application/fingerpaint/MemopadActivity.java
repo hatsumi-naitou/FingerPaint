@@ -1,7 +1,9 @@
-package sample.application.memopad;
+package sample.application.fingerpaint;
 
 import java.text.DateFormat;
 import java.util.Date;
+
+import sample.application.memopad.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -19,11 +21,11 @@ public class MemopadActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); //super eƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX
-        this.setContentView(R.layout.main); //this ©•ª‚ÌƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX   //Ÿè‚Éì‚ç‚ê‚é‚à‚ÌB
+        super.onCreate(savedInstanceState); //super ï¿½eï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½X
+        this.setContentView(R.layout.main); //this ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½X   //ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌB
                 
         EditText et = (EditText) this.findViewById(R.id.editText1);
-        SharedPreferences pref = this.getSharedPreferences("MemoPrefs", MODE_PRIVATE);     //‰Šú•\¦‚Æ‚µ‚ÄA‘O‰ñ•Û‘¶‚µ‚½‚à‚Ì‚ª‚ ‚ê‚Î“Ç‚İ‚ñ‚ÅAˆ—‚µ‚Ä‚ ‚°‚éB@@‚Æ‚¢‚¤ˆ—B
+        SharedPreferences pref = this.getSharedPreferences("MemoPrefs", MODE_PRIVATE);     //ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½Oï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ï¿½Î“Ç‚İï¿½ï¿½ï¿½ÅAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½@ï¿½@ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
         et.setText(pref.getString("memo", ""));
         et.setSelection(pref.getInt("cursor", 0));
         
@@ -31,7 +33,7 @@ public class MemopadActivity extends Activity {
     
     @Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		super.onActivityResult(requestCode, resultCode, data);
 		if(resultCode == RESULT_OK){
 			EditText et = (EditText) findViewById(R.id.editText1);
@@ -46,7 +48,7 @@ public class MemopadActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		MenuInflater mi = this.getMenuInflater();
 		mi.inflate(R.menu.menu, menu);
 		return super.onCreateOptionsMenu(menu);
@@ -54,18 +56,18 @@ public class MemopadActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		EditText et = (EditText) findViewById(R.id.editText1);
 		switch(item.getItemId()){
 		case R.id.menu_save:
 			this.saveMemo();
 			break;
 		case R.id.menu_open:                //              
-			Intent i = new Intent(this, MemoList.class);       //MemoList‚Æ‚¢‚¤ƒNƒ‰ƒX‚É’u‚«Š·‚í‚Á‚½
+			Intent i = new Intent(this, MemoList.class);       //MemoListï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½É’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			this.startActivityForResult(i,0);
 			break;
 		case R.id.menu_new:
-			et.setText("");    //‚±‚±‚ÌƒR[ƒh‚Í‚¨‚©‚µ‚¢BV‹K‚Å‚©‚ç•¶š‚ğ“ü‚ê‚é‚È‚çA‚»‚Ì‘O‚É¡‚Ü‚Å‚Ì•ª‚ÍƒZ[ƒu‚µ‚Ä‚¨‚­ƒR[ƒh‚ğ“ü‚ê‚Ä‚¨‚©‚È‚¢‚ÆB
+			et.setText("");    //ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½[ï¿½hï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½Vï¿½Kï¿½Å‚ï¿½ï¿½ç•¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½Aï¿½ï¿½ï¿½Ì‘Oï¿½Éï¿½ï¿½Ü‚Å‚Ì•ï¿½ï¿½ÍƒZï¿½[ï¿½uï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÆB
 			break;
 		}
 		return super.onOptionsItemSelected(item);
@@ -74,17 +76,17 @@ public class MemopadActivity extends Activity {
 	@Override
     protected void onStop(){
 		super.onStop();
-    	EditText et = (EditText) this.findViewById(R.id.editText1);   //onStop‚ªŒÄ‚Î‚ê‚½‚ç¡“ü—Í‚³‚ê‚Ä‚¢‚éƒf[ƒ^‚ğæ“¾‚µ‚Ä‚­‚éB
+    	EditText et = (EditText) this.findViewById(R.id.editText1);   //onStopï¿½ï¿½ï¿½Ä‚Î‚ê‚½ï¿½ç¡ï¿½ï¿½Í‚ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½B
     	SharedPreferences pref = this.getSharedPreferences("Memoprefs", MODE_PRIVATE);
     	SharedPreferences.Editor editor = pref.edit();
-    	editor.putString("memo", et.getText().toString());    //ƒvƒŠƒtƒ@ƒŒƒ“ƒX‚Ì’†‚ÅAmemo‚Æ‚¢‚¤–¼‘O‚Å•Û‘¶‚·‚éB
+    	editor.putString("memo", et.getText().toString());    //ï¿½vï¿½ï¿½ï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Ì’ï¿½ï¿½ÅAmemoï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Å•Û‘ï¿½ï¿½ï¿½ï¿½ï¿½B
     	editor.putInt("cursor", Selection.getSelectionStart(et.getText()));
     	editor.commit();
     	    	
     }
     
-	public void saveMemo(){         //‚±‚ê‚ÍŒp³‚µ‚½•ª‚É’Ç‰Á‚µ‚½ƒƒ\ƒbƒh‚Ì‚½‚ßAƒAƒ“ƒhƒƒCƒh‚Í©“®“I‚É‚ÍÀs‚µ‚Ä‚­‚ê‚È‚¢BƒAƒ“ƒhƒƒCƒh“I‚É‚Í’m‚Á‚½‚±‚Æ‚Å‚Í‚È‚¢B
-		EditText et = (EditText)this.findViewById(R.id.editText1);     //onOptionsItemSelected“à‚ÅAƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÉŒÄ‚Ô‚æ‚¤‚É‚È‚Á‚Ä‚¢‚éB
+	public void saveMemo(){         //ï¿½ï¿½ï¿½ï¿½ÍŒpï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Ì‚ï¿½ï¿½ßAï¿½Aï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Cï¿½hï¿½Íï¿½ï¿½ï¿½ï¿½Iï¿½É‚Íï¿½ï¿½sï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½Bï¿½Aï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Cï¿½hï¿½Iï¿½É‚Í’mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚Å‚Í‚È‚ï¿½ï¿½B
+		EditText et = (EditText)this.findViewById(R.id.editText1);     //onOptionsItemSelectedï¿½ï¿½ï¿½ÅAï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÉŒÄ‚Ô‚æ‚¤ï¿½É‚È‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½B
 		String title;
 		String memo = et.getText().toString();
 		

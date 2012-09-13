@@ -1,5 +1,5 @@
-//ö‹Æ“à‚Ìà–¾‚Ì‚½‚ß‚Éì¬B
-package sample.application.memopad;
+//ï¿½ï¿½ï¿½Æ“ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ß‚Éì¬ï¿½B
+package sample.application.fingerpaint;
 
 import android.app.Activity;
 
@@ -11,7 +11,7 @@ public class AndroidMain {
 	
 	/*
 	public static void main(String[] args) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		Activity activity = getMainActivity();
 		activity.onCreate(null);
 	}

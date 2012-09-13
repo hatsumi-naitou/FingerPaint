@@ -1,4 +1,4 @@
-package sample.application.memopad;
+package sample.application.fingerpaint;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -34,7 +34,7 @@ public class MemoDBHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 
 	}
 	
